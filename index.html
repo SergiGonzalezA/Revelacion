@@ -27,9 +27,7 @@
             z-index: 10;
         }
 
-        .container:hover {
-            transform: scale(1.02);
-        }
+        .container:hover { transform: scale(1.02); }
         
         h1 {
             color: #424242;
@@ -55,21 +53,12 @@
             animation: pulse 2s infinite;
         }
 
-        .button:hover {
-            background-color: #616161;
-            transform: scale(1.05);
-        }
+        .button:hover { background-color: #616161; transform: scale(1.05); }
 
         @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
-            }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
         
         .result-container {
@@ -89,13 +78,11 @@
             text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
         }
 
-        /* Animación de Humo Mejorada y en Pantalla Completa */
+        /* Humo */
         .smoke-container {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             pointer-events: none;
             z-index: 5;
             display: none;
@@ -110,75 +97,24 @@
             box-shadow: 0 0 40px 10px rgba(158, 158, 158, 0.3);
         }
 
-        .smoke:nth-child(1) {
-            width: 60px;
-            height: 60px;
-            animation-delay: 0s;
-            left: 10%;
-            top: 15%;
-        }
-
-        .smoke:nth-child(2) {
-            width: 80px;
-            height: 80px;
-            animation-delay: 2s;
-            left: 40%;
-            top: 30%;
-        }
-
-        .smoke:nth-child(3) {
-            width: 50px;
-            height: 50px;
-            animation-delay: 4s;
-            left: 70%;
-            top: 20%;
-        }
-
-        .smoke:nth-child(4) {
-            width: 70px;
-            height: 70px;
-            animation-delay: 1s;
-            left: 20%;
-            top: 60%;
-        }
-
-        .smoke:nth-child(5) {
-            width: 90px;
-            height: 90px;
-            animation-delay: 3s;
-            left: 60%;
-            top: 70%;
-        }
-
-        .smoke:nth-child(6) {
-            width: 40px;
-            height: 40px;
-            animation-delay: 5s;
-            left: 80%;
-            top: 50%;
-        }
+        .smoke:nth-child(1) { width: 60px; height: 60px; animation-delay: 0s; left: 10%; top: 15%; }
+        .smoke:nth-child(2) { width: 80px; height: 80px; animation-delay: 2s; left: 40%; top: 30%; }
+        .smoke:nth-child(3) { width: 50px; height: 50px; animation-delay: 4s; left: 70%; top: 20%; }
+        .smoke:nth-child(4) { width: 70px; height: 70px; animation-delay: 1s; left: 20%; top: 60%; }
+        .smoke:nth-child(5) { width: 90px; height: 90px; animation-delay: 3s; left: 60%; top: 70%; }
+        .smoke:nth-child(6) { width: 40px; height: 40px; animation-delay: 5s; left: 80%; top: 50%; }
 
         @keyframes smoke-drift {
-            0% {
-                transform: translate(0, 0) scale(1) rotate(0deg);
-                opacity: 0.15;
-            }
-            50% {
-                transform: translate(calc(20vw - 10%), calc(20vh - 10%)) scale(1.2) rotate(30deg);
-                opacity: 0.1;
-            }
-            100% {
-                transform: translate(calc(40vw - 20%), calc(40vh - 20%)) scale(1.4) rotate(0deg);
-                opacity: 0;
-            }
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.15; }
+            50% { transform: translate(calc(20vw - 10%), calc(20vh - 10%)) scale(1.2) rotate(30deg); opacity: 0.1; }
+            100% { transform: translate(calc(40vw - 20%), calc(40vh - 20%)) scale(1.4) rotate(0deg); opacity: 0; }
         }
 
-        /* Animación de Chispas Mejorada */
+        /* Chispas */
         .spark {
             position: absolute;
             background-color: #bbdefb;
-            width: 10px;
-            height: 10px;
+            width: 10px; height: 10px;
             border-radius: 50%;
             opacity: 0;
             animation: sparkle 0.8s ease-out infinite;
@@ -186,23 +122,15 @@
         }
 
         @keyframes sparkle {
-            0%, 100% {
-                opacity: 0;
-                transform: scale(0.7);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
+            0%, 100% { opacity: 0; transform: scale(0.7); }
+            50% { opacity: 1; transform: scale(1.2); }
         }
         
-        /* Animación de Confeti Mejorada */
+        /* Confeti */
         .confetti-container {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             pointer-events: none;
             overflow: hidden;
             display: none;
@@ -211,8 +139,7 @@
 
         .confetti {
             position: absolute;
-            width: 10px;
-            height: 10px;
+            width: 10px; height: 10px;
             background-color: #1976d2;
             opacity: 0;
             animation: confetti-fall 3s forwards;
@@ -220,33 +147,48 @@
             transform-origin: center;
         }
 
-        .confetti:nth-child(even) {
-            background-color: #bbdefb;
-            width: 8px;
-            height: 8px;
-        }
+        .confetti:nth-child(even) { background-color: #bbdefb; width: 8px; height: 8px; }
 
         @keyframes confetti-fall {
-            0% {
-                transform: translateY(-100vh) rotate(calc(360deg * var(--random-rotate)));
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh) rotate(calc(720deg + (360deg * var(--random-rotate))));
-                opacity: 0;
-            }
+            0% { transform: translateY(-100vh) rotate(calc(360deg * var(--random-rotate))); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(calc(720deg + (360deg * var(--random-rotate)))); opacity: 0; }
+        }
+
+        /* Fuegos Artificiales */
+        .fireworks-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 20;
+            display: none;
+        }
+
+        .firework {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: explode 2s ease-out forwards;
+            opacity: 1;
+            box-shadow: 0 0 15px currentColor;
+        }
+
+        .firework:nth-child(3n)   { background: radial-gradient(circle, #ff5252, transparent); }
+        .firework:nth-child(3n+1) { background: radial-gradient(circle, #ffeb3b, transparent); }
+        .firework:nth-child(3n+2) { background: radial-gradient(circle, #40c4ff, transparent); }
+
+        @keyframes explode {
+            from { transform: scale(0); opacity: 1; }
+            to { transform: scale(1.5) translate(var(--x), var(--y)); opacity: 0; }
         }
     </style>
 </head>
 <body>
 
 <div class="smoke-container" id="smoke-box">
-    <div class="smoke"></div>
-    <div class="smoke"></div>
-    <div class="smoke"></div>
-    <div class="smoke"></div>
-    <div class="smoke"></div>
-    <div class="smoke"></div>
+    <div class="smoke"></div><div class="smoke"></div><div class="smoke"></div>
+    <div class="smoke"></div><div class="smoke"></div><div class="smoke"></div>
 </div>
 
 <div class="container">
@@ -259,6 +201,7 @@
 </div>
 
 <div id="confetti-box" class="confetti-container"></div>
+<div id="fireworks-box" class="fireworks-container"></div>
 
 <script>
     function createSpark(x, y, delay) {
@@ -268,10 +211,7 @@
         spark.style.top = y + 'px';
         spark.style.animationDelay = delay + 's';
         document.getElementById('resultContainer').appendChild(spark);
-
-        setTimeout(() => {
-            spark.remove();
-        }, 800);
+        setTimeout(() => spark.remove(), 800);
     }
 
     function createMultipleSparks(centerX, centerY, count) {
@@ -300,6 +240,36 @@
         }
     }
 
+    function createFirework(x, y) {
+        const fireworkBox = document.getElementById('fireworks-box');
+        fireworkBox.style.display = 'block';
+        const particles = 70;
+        for (let i = 0; i < particles; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('firework');
+            const angle = (i / particles) * 2 * Math.PI;
+            const distance = 180 + Math.random() * 80;
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            particle.style.setProperty('--x', `${Math.cos(angle) * distance}px`);
+            particle.style.setProperty('--y', `${Math.sin(angle) * distance}px`);
+            particle.style.color = ["#ff5252", "#ffeb3b", "#40c4ff", "#ff4081", "#69f0ae"][Math.floor(Math.random() * 5)];
+            fireworkBox.appendChild(particle);
+            setTimeout(() => particle.remove(), 2000);
+        }
+    }
+
+    function launchFireworks() {
+        const fireworkBox = document.getElementById('fireworks-box');
+        for (let i = 0; i < 6; i++) {
+            setTimeout(() => {
+                const x = Math.random() * window.innerWidth * 0.8 + 100;
+                const y = Math.random() * window.innerHeight * 0.5 + 50;
+                createFirework(x, y);
+            }, i * 1200);
+        }
+    }
+
     function reveal() {
         document.body.style.background = '#e1f5fe';
         document.getElementById('title').style.display = 'none';
@@ -319,6 +289,9 @@
             const centerY = rect.top + rect.height / 2;
             createMultipleSparks(centerX, centerY, 50);
             createConfetti();
+            // 🔥 ahora los fuegos artificiales se repiten en bucle
+            setInterval(launchFireworks, 6000);
+            launchFireworks(); // primer disparo inmediato
         }, 5000);
     }
 </script>
